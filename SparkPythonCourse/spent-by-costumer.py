@@ -7,6 +7,12 @@ Created on Sun Dec 26 19:51:48 2021
 
 from pyspark import SparkConf, SparkContext
 
+## Data
+DATA_PATH = '../data/'
+FILE = "customer-orders.csv"
+
+data = DATA_PATH + FILE
+
 ## Function to parse the data
 def parseData(csvData):
     clientData = csvData.split(",")
@@ -14,15 +20,11 @@ def parseData(csvData):
     spent = float(clientData[2])
     return (clientID, spent)
     
+
 ## Create Spark context
 conf = SparkConf().setMaster("local").setAppName("SpentByCostumer")
 sc = SparkContext(conf = conf)
 
-## Data
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "customer-orders.csv"
-
-data = DATA_PATH + data_file
 
 ## The function
 spentByCostumerOrderedByTotal = sc.textFile(data).map(parseData).reduceByKey(lambda x, y: (x + y))\

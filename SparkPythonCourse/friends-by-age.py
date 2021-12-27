@@ -7,6 +7,13 @@ Created on Fri Dec 24 12:15:12 2021
 
 from pyspark import SparkConf, SparkContext
 
+## Data
+DATA_PATH = '../data/'
+FILE = "fakefriends-noheader.csv"
+
+data = DATA_PATH + FILE
+
+# Function to get data from lines
 def parseLine(lines):
     line = lines.split(",")
     age = int(line[2])
@@ -17,12 +24,6 @@ def parseLine(lines):
 ## Create Spark context
 conf = SparkConf().setMaster("local").setAppName("FriendsByAge")
 sc = SparkContext(conf = conf)
-
-## Data
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "fakefriends-noheader.csv"
-
-data = DATA_PATH + data_file
 
 ## Friends by age
 friendsByAge = sc.textFile(data).map(parseLine).mapValues(lambda x: (x, 1))\

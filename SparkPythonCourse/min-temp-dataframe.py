@@ -9,11 +9,14 @@ from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, FloatType
 
+## Data
+DATA_PATH = '../data/'
+FILE = "1800.csv"
+
+data = DATA_PATH + FILE
+
 # Create a SparkSession
 spark = SparkSession.builder.appName("MinimumTemperature").getOrCreate()
-
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "1800.csv"
 
 ## Create the schema
 schema = StructType([\
@@ -23,7 +26,7 @@ schema = StructType([\
                      StructField("temperature", FloatType(), True), ])
 
 ## Open the file with the schema created
-data = spark.read.schema(schema).csv(DATA_PATH + data_file)
+data = spark.read.schema(schema).csv(data)
 
 ## Filter the data to get only minimum measures
 tminData = data.filter(data.measure_type == "TMIN")

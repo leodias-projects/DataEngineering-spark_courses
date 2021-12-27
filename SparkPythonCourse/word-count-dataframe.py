@@ -8,13 +8,17 @@ Created on Mon Dec 27 10:13:22 2021
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 
+## Data
+DATA_PATH = '../data/'
+FILE = "book.txt"
+
+data = DATA_PATH + FILE
+
 # Create a SparkSession
 spark = SparkSession.builder.appName("WordCount").getOrCreate()
 
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "book.txt"
-
-inputDF = spark.read.text(DATA_PATH + data_file)
+## Function
+inputDF = spark.read.text(data)
 
 words = inputDF.select(func.explode(func.split(inputDF.value, "\\W+")).alias("word"))
 words.filter(words.word != "")

@@ -9,11 +9,14 @@ from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, FloatType
 
+## Data
+DATA_PATH = '../data/'
+FILE = "customer-orders.csv"
+
+data = DATA_PATH + FILE
+
 # Create a SparkSession
 spark = SparkSession.builder.appName("SpentByCostumer").getOrCreate()
-
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "customer-orders.csv"
 
 ## Create the schema
 schema = StructType([\
@@ -22,7 +25,7 @@ schema = StructType([\
                      StructField("spent", FloatType(), True)])
 
 ## Open the file with the schema created
-data = spark.read.schema(schema).csv(DATA_PATH + data_file)
+data = spark.read.schema(schema).csv(data)
 
 ## Get only customer ID and spent
 relevantData = data.select("customerID", "spent")

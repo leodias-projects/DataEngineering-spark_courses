@@ -7,15 +7,18 @@ Created on Mon Dec 27 08:52:10 2021
 
 from pyspark.sql import SparkSession
 
+## Data
+DATA_PATH = '../data/'
+FILE = "fakefriends.csv"
+
+data = DATA_PATH + FILE
+
 # Create a SparkSession
 spark = SparkSession.builder.appName("SparkSQL").getOrCreate()
 
-
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "fakefriends.csv"
-
+## Playing with sql dataframe
 people = spark.read.option("header", "true").option("inferSchema", "true")\
-    .csv(DATA_PATH + data_file)
+    .csv(data)
 
 people.printSchema()
 

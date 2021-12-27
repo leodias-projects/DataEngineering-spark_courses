@@ -7,6 +7,14 @@ Created on Fri Dec 24 13:09:58 2021
 
 from pyspark import SparkConf, SparkContext
 
+
+## Data
+DATA_PATH = '../data/'
+FILE = "1800.csv"
+
+data = DATA_PATH + FILE
+
+# Function to get data from lines
 def parseLine(lines):
     line = lines.split(",")
     stationID = line[0]
@@ -18,12 +26,6 @@ def parseLine(lines):
 ## Create Spark context
 conf = SparkConf().setMaster("local").setAppName("MaximumTemperature")
 sc = SparkContext(conf = conf)
-
-## Data
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "1800.csv"
-
-data = DATA_PATH + data_file
 
 ## Maximum temperature
 maximumTemperature = sc.textFile(data).map(parseLine).filter(lambda x: "TMAX" in x[1])\

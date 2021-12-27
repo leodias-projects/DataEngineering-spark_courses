@@ -8,6 +8,12 @@ Created on Fri Dec 24 13:21:33 2021
 from pyspark import SparkConf, SparkContext
 import re
 
+## Data
+DATA_PATH = '../data/'
+FILE = "book.txt"
+
+data = DATA_PATH + FILE
+
 ## Function to process words
 def normalizeWords(text):
     '''
@@ -17,21 +23,15 @@ def normalizeWords(text):
     '''
     return re.compile(r'\W+', re.UNICODE).split(text.lower())
 
+
 ## Create Spark context
 conf = SparkConf().setMaster("local").setAppName("WordCount")
 sc = SparkContext(conf = conf)
-
-## Data
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "book.txt"
-
-data = DATA_PATH + data_file
 
 ## Read file
 lines = sc.textFile(data)
 
 ## The function
-
 sortedUniqueWords = lines.flatMap(normalizeWords).map(lambda x: (x, 1))\
     .reduceByKey(lambda x, y: x + y).map(lambda x: (x[1],x[0])).sortByKey(ascending=True)
 
@@ -54,3 +54,4 @@ sortedUniqueWords = lines.flatMap(normalizeWords).map(lambda x: (x, 1))\
 ## Print
 for i in sortedUniqueWords.collect():
     print(i[1], "------ numbers of time: ", i[0])
+    

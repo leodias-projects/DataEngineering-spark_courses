@@ -8,15 +8,15 @@ Created on Fri Dec 24 10:28:57 2021
 from pyspark import SparkConf, SparkContext
 import collections
 
+## Data
+DATA_PATH = '../data/'
+FILE = "ml-100k/u.data"
+
+data = DATA_PATH + FILE
+
 ## Create Spark context
 conf = SparkConf().setMaster("local").setAppName("RatingCounter")
 sc = SparkContext(conf = conf)
-
-## Data
-DATA_PATH = "C:/SparkPythonCourse/SparkPythonCourse/data/"
-data_file = "ml-100k/u.data"
-
-data = DATA_PATH + data_file
 
 ## Read file
 lines = sc.textFile(data)
