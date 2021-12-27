@@ -19,7 +19,7 @@ object FriendsByAge {
 
   def main(args: Array[String]): Unit ={
 
-    val DATA_PATH = "C:/SparkScalaCourse/SparkScalaCourse/data/"
+    val DATA_PATH = "../data/"
 
     // Remove messages that are not error
     Logger.getLogger("org").setLevel(Level.ERROR)
