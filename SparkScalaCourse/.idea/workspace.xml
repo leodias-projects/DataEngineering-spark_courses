@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f2f7797-fbb8-4236-8921-8f0aeb7d3607" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/leo/spark/FriendsByAge.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/leo/spark/FriendsByAge.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/leo/spark/FriendsByAgeDataset.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/leo/spark/FriendsByAgeDataset.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/leo/spark/MostPopularMovieDataset.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/leo/spark/MostPopularMovieDataset.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +41,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.WordCountDataset">
-    <configuration name="RatingCounter" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.leo.spark.RatingCounter" />
+  <component name="RunManager" selected="Application.MostPopularMovieDataset">
+    <configuration name="MostPopularMovieDataset" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.leo.spark.MostPopularMovieDataset" />
       <module name="SparkScalaCourse" />
       <extension name="coverage">
         <pattern>
@@ -109,19 +108,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RatingCounter" />
       <item itemvalue="Application.SparkSQLDataset" />
       <item itemvalue="Application.SpentByCostumer" />
       <item itemvalue="Application.SpentByCostumerDataset" />
       <item itemvalue="Application.WordCountDataset" />
+      <item itemvalue="Application.MostPopularMovieDataset" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MostPopularMovieDataset" />
         <item itemvalue="Application.WordCountDataset" />
         <item itemvalue="Application.SpentByCostumerDataset" />
         <item itemvalue="Application.SpentByCostumer" />
         <item itemvalue="Application.SparkSQLDataset" />
-        <item itemvalue="Application.RatingCounter" />
       </list>
     </recent_temporary>
   </component>
