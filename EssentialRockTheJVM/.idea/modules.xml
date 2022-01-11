@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EssentialRockTheJVM.iml" filepath="$PROJECT_DIR$/.idea/modules/EssentialRockTheJVM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EssentialRockTheJVM-build.iml" filepath="$PROJECT_DIR$/.idea/modules/EssentialRockTheJVM-build.iml" />
+    </modules>
+  </component>
+</project>
