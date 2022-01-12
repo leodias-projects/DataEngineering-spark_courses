@@ -53,5 +53,17 @@ object Expressions extends App{
   // Value of the block is the value of the last expression
   // values/variables inside the code block is invisible to outside
 
-  val anotherValue = z + 1
+  // 1. difference between "hello world" vs println("hello world")?
+  // "hello world" returns string, println("hello world") returns unit()
+
+  // 2.
+
+  val someValue = {
+    2 < 3
+  } // boolean false
+
+  val someOtherValue = {
+    if(someValue) 239 else 986
+    42
+  }
 }
